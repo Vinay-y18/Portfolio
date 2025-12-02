@@ -227,6 +227,53 @@ body {
     }
 }
 
+/* MENU BUTTON */
+.menu-btn {
+    font-size: 32px;
+    cursor: pointer;
+    display: none; /* hidden on desktop */
+    color: #00eaff;
+    z-index: 1001;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* hide initially */
+        width: 100%;   /* full width */
+        height: 100vh; /* full height */
+        background: #000000; /* solid black background */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transition: right 0.3s ease-in-out;
+        z-index: 9999; /* above everything */
+    }
+
+    .nav-links.active {
+        right: 0; /* slide-in */
+    }
+
+    .nav-links a {
+        font-size: 24px;
+        color: #00eaff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #009bb3;
+        transform: scale(1.1);
+    }
+}
+
 
 
 
@@ -478,6 +525,74 @@ body {
     }
 }
 
+/* ===== PROJECT SECTION RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .project-card {
+        height: auto; /* adjust height automatically */
+        padding: 20px;
+    }
+
+    .project-content {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        gap: 0.8rem;
+        transform: scale(1);
+        text-align: center;
+    }
+
+    .project-heading {
+        font-size: 26px;
+    }
+
+    .project-subheading {
+        font-size: 14px;
+        line-height: 1.6;
+        width: 100%;
+    }
+
+    .btn-group {
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .project-skills-container {
+        justify-content: center;
+    }
+
+    .project-skill {
+        width: 30px;
+        margin: 3px;
+    }
+
+    .project-number {
+        display: none; /* hide big number on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-heading {
+        font-size: 22px;
+    }
+
+    .project-subheading {
+        font-size: 13px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+
 /* ========================================================================== */
 
 /* === CONTACT === */
@@ -518,8 +633,10 @@ footer {
 /* === MEDIA QUERIES === */
 @media (max-width: 768px) {
     .hero {
+        height: auto;      
         flex-direction: column;
         text-align: center;
+        padding-bottom: 40px; 
     }
 
     .hero-text h1 {
@@ -558,3 +675,56 @@ footer {
     }
 }
 
+
+/* === ABOUT SECTION RESPONSIVE === */
+@media (max-width: 768px) {
+    .about p {
+        font-size: 14px;        
+        line-height: 1.6;       
+        width: 100%;            
+        text-align: center;     
+        padding: 0 10px; 
+        padding-top: 40px;
+        text-align: center;       
+    }
+
+    .section-title {
+        font-size: 32px;        
+        text-align: center;     
+    }
+}
+
+@media (max-width: 480px) {
+    .about p {
+        font-size: 13px;        
+        padding: 0 8px;
+         width: 100%; 
+    line-height: 1.5;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .hero-text p {
+        width: 100%;       /* full width on mobile */
+        font-size: 14px;   /* smaller font for mobile */
+        line-height: 1.5;  /* better spacing */
+        margin: 15px 0;
+        text-align: center; /* center text for better look */
+    }
+
+    .hero-text {
+        padding: 0 10px;   /* small padding so text doesn't touch edges */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text p {
+        font-size: 12px;   /* even smaller for very small screens */
+        line-height: 1.4;
+    }
+}
